@@ -1,0 +1,70 @@
+[
+  {
+    "type": 1,
+    "title": "Elasticsearch",
+    "description": "Elasticearch docker",
+    "categories": [
+      "Log Management"
+    ],
+    "platform": "linux",
+    "hostname": "elasticsearch",
+    "logo": "https://www.elastic.co/static-res/images/elastic-logo-200.png",
+    "image": "elasticsearch:7.6.1",
+    "ports": [
+      "9200/tcp",
+      "9300/tcp"
+    ],
+    "env": [
+      {
+        "name": "discovery.type",
+        "label": "single-node"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/usr/share/elasticsearch/data"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Jenkins",
+    "description": "Open-source continuous integration tool",
+    "categories": [
+      "continuous-integration"
+    ],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
+    "image": "jenkins/jenkins:lts",
+    "ports": [
+      "8080/tcp",
+      "50000/tcp"
+    ],
+    "env": [
+      {
+        "name": "JENKINS_OPTS",
+        "label": "Jenkins options"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/var/jenkins_home"
+      }
+    ]
+  },
+  {
+    "type": 2,
+    "title": "Portainer Agent",
+    "description": "Manage all the resources in your Swarm cluster",
+    "note": "The agent will be deployed globally inside your cluster and available on port 9001.",
+    "categories": [
+      "portainer"
+    ],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+    "repository": {
+      "url": "https://github.com/portainer/templates",
+      "stackfile": "stacks/portainer-agent/docker-stack.yml"
+    }
+  }
+]
