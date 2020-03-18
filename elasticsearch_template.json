@@ -1,0 +1,36 @@
+{
+  "Id": 51,
+  "administrator_only": false,
+  "categories": [
+    "Log Management"
+  ],
+  "description": "elasticsearch docker",
+  "env": [
+    {
+      "default": "single-node",
+      "name": "discovery.type",
+      "preset": true
+    }
+  ],
+  "image": "elasticsearch:7.6.1",
+  "logo": "https://www.elastic.co/static-res/images/elastic-logo-200.png",
+  "name": "elasticsearch",
+  "network": "bridge",
+  "platform": "linux",
+  "ports": [
+    "9200:9200/tcp",
+    "9300:9300/tcp"
+  ],
+  "repository": {
+    "stackfile": "",
+    "url": ""
+  },
+  "restart_policy": "always",
+  "title": "elasticsearch",
+  "type": 1,
+  "volumes": [
+    {
+      "container": "/usr/share/elasticsearch/data"
+    }
+  ]
+}
