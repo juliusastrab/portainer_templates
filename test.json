@@ -1,0 +1,422 @@
+[
+    {
+        "Id": 11,
+        "administrator_only": false,
+        "categories": [
+            "database"
+        ],
+        "description": "Open-source search and analytics engine",
+        "image": "elasticsearch:latest",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/elasticsearch.png",
+        "platform": "linux",
+        "ports": [
+            "9200/tcp",
+            "9300/tcp"
+        ],
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "title": "Elasticsearch",
+        "type": 1,
+        "volumes": [
+            {
+                "container": "/usr/share/elasticsearch/data"
+            }
+        ]
+    },
+    {
+        "Id": 29,
+        "administrator_only": false,
+        "categories": [
+            "Log Management",
+            "Monitoring"
+        ],
+        "description": "Collect logs, metrics and docker events",
+        "env": [
+            {
+                "label": "Logs token",
+                "name": "LOGSENE_TOKEN"
+            },
+            {
+                "label": "SPM monitoring token",
+                "name": "SPM_TOKEN"
+            }
+        ],
+        "image": "sematext/sematext-agent-docker:latest",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
+        "name": "sematext-agent",
+        "platform": "linux",
+        "privileged": true,
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "title": "Sematext Docker Agent",
+        "type": 1,
+        "volumes": [
+            {
+                "bind": "/var/run/docker.sock",
+                "container": "/var/run/docker.sock"
+            }
+        ]
+    },
+    {
+        "Id": 33,
+        "administrator_only": false,
+        "categories": [
+            "continuous-integration"
+        ],
+        "description": "Open-source continuous integration tool",
+        "env": [
+            {
+                "label": "Jenkins options",
+                "name": "JENKINS_OPTS"
+            }
+        ],
+        "image": "jenkins/jenkins:lts",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
+        "platform": "linux",
+        "ports": [
+            "8080/tcp",
+            "50000/tcp"
+        ],
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "title": "Jenkins",
+        "type": 1,
+        "volumes": [
+            {
+                "container": "/var/jenkins_home"
+            }
+        ]
+    },
+    {
+        "Id": 40,
+        "administrator_only": false,
+        "categories": [
+            "portainer"
+        ],
+        "description": "Manage all the resources in your Swarm cluster",
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+        "note": "The agent will be deployed globally inside your cluster and available on port 9001.",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/portainer-agent/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "Portainer Agent",
+        "type": 2
+    },
+    {
+        "Id": 41,
+        "administrator_only": false,
+        "categories": [
+            "serverless"
+        ],
+        "description": "Serverless functions made simple",
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/openfaas.png",
+        "name": "func",
+        "note": "Deploys the API gateway and sample functions. You can access the UI on port 8080. <b>Warning</b>: the name of the stack must be 'func'.",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "docker-compose.yml",
+            "url": "https://github.com/openfaas/faas"
+        },
+        "title": "OpenFaaS",
+        "type": 2
+    },
+    {
+        "Id": 42,
+        "administrator_only": false,
+        "categories": [
+            "serverless"
+        ],
+        "description": "Open-source serverless computing platform",
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ironfunctions.png",
+        "note": "Deploys the IronFunctions API and UI.",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/ironfunctions/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "IronFunctions",
+        "type": 2
+    },
+    {
+        "Id": 43,
+        "administrator_only": false,
+        "categories": [
+            "database"
+        ],
+        "description": "CockroachDB cluster",
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cockroachdb.png",
+        "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/cockroachdb/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "CockroachDB",
+        "type": 2
+    },
+    {
+        "Id": 44,
+        "administrator_only": false,
+        "categories": [
+            "CMS"
+        ],
+        "description": "Wordpress setup with a MySQL database",
+        "env": [
+            {
+                "description": "Password used by the MySQL root user.",
+                "label": "Database root password",
+                "name": "MYSQL_DATABASE_PASSWORD"
+            }
+        ],
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+        "note": "Deploys a Wordpress instance connected to a MySQL database.",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/wordpress/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "Wordpress",
+        "type": 2
+    },
+    {
+        "Id": 46,
+        "administrator_only": false,
+        "categories": [
+            "OPS"
+        ],
+        "description": "Microsoft Operations Management Suite Linux agent.",
+        "env": [
+            {
+                "description": "Azure Workspace ID",
+                "label": "Workspace ID",
+                "name": "AZURE_WORKSPACE_ID"
+            },
+            {
+                "description": "Azure primary key",
+                "label": "Primary key",
+                "name": "AZURE_PRIMARY_KEY"
+            }
+        ],
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/microsoft-oms/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "Microsoft OMS Agent",
+        "type": 2
+    },
+    {
+        "Id": 47,
+        "administrator_only": false,
+        "categories": [
+            "Log Management",
+            "Monitoring"
+        ],
+        "description": "Collect logs, metrics and docker events",
+        "env": [
+            {
+                "label": "Logs token",
+                "name": "LOGSENE_TOKEN"
+            },
+            {
+                "label": "SPM monitoring token",
+                "name": "SPM_TOKEN"
+            }
+        ],
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/sematext-agent-docker/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "Sematext Docker Agent",
+        "type": 2
+    },
+    {
+        "Id": 48,
+        "administrator_only": false,
+        "categories": [
+            "Monitoring"
+        ],
+        "description": "Collect events and metrics",
+        "env": [
+            {
+                "label": "Datadog API key",
+                "name": "API_KEY"
+            }
+        ],
+        "image": "",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/datadog_agent.png",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "stacks/datadog-agent/docker-stack.yml",
+            "url": "https://github.com/portainer/templates"
+        },
+        "title": "Datadog agent",
+        "type": 2
+    },
+    {
+        "Id": 51,
+        "administrator_only": false,
+        "categories": [
+            "Log Management"
+        ],
+        "description": "elasticsearch docker",
+        "env": [
+            {
+                "default": "single-node",
+                "name": "discovery.type",
+                "preset": true
+            }
+        ],
+        "image": "elasticsearch:7.6.1",
+        "logo": "https://www.elastic.co/static-res/images/elastic-logo-200.png",
+        "name": "elasticsearch",
+        "network": "bridge",
+        "platform": "linux",
+        "ports": [
+            "9200:9200/tcp",
+            "9300:9300/tcp"
+        ],
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "restart_policy": "always",
+        "title": "elasticsearch",
+        "type": 1,
+        "volumes": [
+            {
+                "container": "/usr/share/elasticsearch/data"
+            }
+        ]
+    },
+    {
+        "Id": 52,
+        "administrator_only": false,
+        "categories": [
+            "Log Management"
+        ],
+        "description": "kibana docker",
+        "env": [
+            {
+                "default": "http://10.128.0.18:9200",
+                "name": "ELASTICSEARCH_HOSTS",
+                "preset": true
+            }
+        ],
+        "image": "kibana:7.6.1",
+        "logo": "https://cdn.shortpixel.ai/client/q_lossless,ret_img,w_300/https://spiraldatagroup.com.au/wp-content/uploads/2019/04/elastic-kibana-logo-png-transparent-300x300.png",
+        "name": "kibana",
+        "network": "bridge",
+        "platform": "linux",
+        "ports": [
+            "5601:5601/tcp"
+        ],
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "restart_policy": "always",
+        "title": "kibana",
+        "type": 1
+    },
+    {
+        "Id": 53,
+        "administrator_only": false,
+        "categories": [
+            "Log Management"
+        ],
+        "description": "Metricbeat container",
+        "env": [
+            {
+                "default": "10.128.0.18:5601",
+                "name": "setup.kibana.host",
+                "preset": true
+            },
+            {
+                "default": "[\"10.128.0.18:9200\"]",
+                "name": "output.elasticsearch.hosts",
+                "preset": true
+            }
+        ],
+        "hostname": "metricbeat",
+        "image": "store/elastic/metricbeat:6.8.7",
+        "logo": "data:image/png;base64,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",
+        "name": "metricbeat",
+        "network": "bridge",
+        "ports": [
+            "5601:5601/tcp",
+            "9200:9200/tcp"
+        ],
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "restart_policy": "always",
+        "title": "metricbeat",
+        "type": 1
+    },
+    {
+        "Id": 54,
+        "administrator_only": false,
+        "categories": [
+            "Log Management"
+        ],
+        "command": "./filebeat -c /filebeat_disc/filebeat.yml",
+        "description": "filebeat docker",
+        "env": [
+            {
+                "default": "10.128.0.18",
+                "name": "ELASTICSEARCH_IP",
+                "preset": true
+            },
+            {
+                "default": "10.128.0.18",
+                "name": "KIBANA_IP",
+                "preset": true
+            }
+        ],
+        "hostname": "filebeat",
+        "image": "docker.elastic.co/beats/filebeat:7.6.1",
+        "labels": [
+            {
+                "name": "",
+                "value": ""
+            }
+        ],
+        "logo": "https://www.kindpng.com/picc/m/189-1890553_beats-filebeat-logo-hd-png-download.png",
+        "name": "filebeat",
+        "network": "bridge",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "",
+            "url": ""
+        },
+        "restart_policy": "always",
+        "title": "filebeat",
+        "type": 1,
+        "volumes": [
+            {
+                "bind": "filebeat_disc",
+                "container": "/filebeat_disc"
+            }
+        ]
+    }
+]
