@@ -1,0 +1,26 @@
+- Id: 53
+  administrator_only: false
+  categories:
+    - Log Management
+  description: Metricbeat container
+  env:
+    - default: 10.128.0.18:5601
+      name: setup.kibana.host
+      preset: true
+    - default: '["10.128.0.18:9200"]'
+      name: output.elasticsearch.hosts
+      preset: true
+  hostname: metricbeat
+  image: store/elastic/metricbeat:6.8.7
+  logo: data:image/png;base64,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
+  name: metricbeat
+  network: bridge
+  ports:
+    - 5601:5601/tcp
+    - 9200:9200/tcp
+  repository:
+    stackfile: ""
+    url: ""
+  restart_policy: always
+  title: metricbeat
+  type: 1
