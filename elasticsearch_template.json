@@ -1,4 +1,5 @@
-{
+[
+  {
   "Id": 1,
   "administrator_only": false,
   "categories": [
@@ -34,3 +35,4 @@
       }
   ]
 }
+]
