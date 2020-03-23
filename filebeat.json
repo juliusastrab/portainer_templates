@@ -1,0 +1,46 @@
+{
+    "Id": 54,
+    "administrator_only": false,
+    "categories": [
+        "Log Management"
+    ],
+    "command": "./filebeat -c /filebeat_disc/filebeat.yml",
+    "description": "filebeat docker",
+    "env": [
+        {
+            "default": "10.128.0.18",
+            "name": "ELASTICSEARCH_IP",
+            "preset": true
+        },
+        {
+            "default": "10.128.0.18",
+            "name": "KIBANA_IP",
+            "preset": true
+        }
+    ],
+    "hostname": "filebeat",
+    "image": "docker.elastic.co/beats/filebeat:7.6.1",
+    "labels": [
+        {
+            "name": "",
+            "value": ""
+        }
+    ],
+    "logo": "https://www.kindpng.com/picc/m/189-1890553_beats-filebeat-logo-hd-png-download.png",
+    "name": "filebeat",
+    "network": "bridge",
+    "platform": "linux",
+    "repository": {
+        "stackfile": "",
+        "url": ""
+    },
+    "restart_policy": "always",
+    "title": "filebeat",
+    "type": 1,
+    "volumes": [
+        {
+            "bind": "filebeat_disc",
+            "container": "/filebeat_disc"
+        }
+    ]
+}
