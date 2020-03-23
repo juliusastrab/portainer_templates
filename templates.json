@@ -197,7 +197,7 @@
     "logo": "https://www.codeproject.com/KB/dotnet/1212134/LDAPUtility.png",
     "name": "LDAP-account-manager",
     "ports": [
-        "8000:8080/tcp"
+        "7000:8080/tcp"
     ],
     "repository": {
         "stackfile": "",
