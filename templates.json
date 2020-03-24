@@ -178,41 +178,5 @@
             "container": "/var/jenkins_home"
         }
     ]
-},
-{
-    "Id": 55,
-    "administrator_only": false,
-    "categories": [
-        "continuous-integration"
-    ],
-    "description": "LDAP Account Manager",
-    "env": [
-        {
-            "default": "true",
-            "name": "LAM_SKIP_PRECONFIGURE",
-            "preset": true
-        }
-    ],
-    "image": "ldapaccountmanager/lam:stable",
-    "logo": "https://www.codeproject.com/KB/dotnet/1212134/LDAPUtility.png",
-    "name": "LDAP-account-manager",
-    "ports": [
-        "7000:8080/tcp"
-    ],
-    "repository": {
-        "stackfile": "",
-        "url": ""
-    },
-    "restart_policy": "always",
-    "title": "LDAP",
-    "type": 1,
-    "volumes": [
-        {
-            "container": "/data/lam/config/config.cfg:/etc/ldap-account-manager/config.cfg"
-        },
-        {
-            "container": "/data/lam/config/lam.conf:/var/lib/ldap-account-manager/config/lam.conf"
-        }
-    ]
 }
 ]
